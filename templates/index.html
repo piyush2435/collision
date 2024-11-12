@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Collision Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #87CEEB; /* Sky blue background */
+        }
+        #controls {
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        label, input, select {
+            font-size: 16px;
+            margin: 5px;
+        }
+        #simulationCanvas {
+            border: 2px solid black;
+            background-color: #87CEEB;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Car Collision Simulation</h1>
+    <div id="controls">
+        <label for="carMass">Car Mass (kg):</label>
+        <input type="number" id="carMass" step="0.1" required>
+
+        <label for="carAcceleration">Car Acceleration (m/s²):</label>
+        <input type="number" id="carAcceleration" step="0.1" required>
+
+        <label for="carInitialVelocity">Car Initial Velocity (m/s):</label>
+        <input type="number" id="carInitialVelocity" step="0.1" required>
+
+        <label for="objectMass">Object Mass (kg):</label>
+        <input type="number" id="objectMass" step="0.1" required>
+
+        <label for="objectAcceleration">Object Acceleration (m/s²):</label>
+        <input type="number" id="objectAcceleration" step="0.1" required>
+
+        <label for="objectInitialVelocity">Object Initial Velocity (m/s):</label>
+        <input type="number" id="objectInitialVelocity" step="0.1" required>
+
+        <label for="objectDistance">Distance (m):</label>
+        <input type="number" id="objectDistance" step="1" required>
+
+        <label for="objectType">Object Type:</label>
+        <select id="objectType">
+            <option value="person">Person</option>
+            <option value="car">Car</option>
+            <option value="truck">Truck</option>
+            <option value="pole">Pole</option>
+        </select>
+
+        <label for="collisionDecision">Collision Decision:</label>
+        <select id="collisionDecision">
+            <option value="collide">Collide</option>
+            <option value="avoid">Avoid</option>
+        </select>
+
+        <button id="startSimulation">Start Simulation</button>
+    </div>
+
+    <canvas id="simulationCanvas" width="800" height="400"></canvas>
+
+    <script src="simulation.js"></script>
+
+</body>
+</html>
